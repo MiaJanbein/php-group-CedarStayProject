@@ -1,0 +1,2 @@
+# php-group-CedarStayProject
+CedarStay is an online platform designed to revolutionize the way users book accommodations in Lebanon. Leveraging the charm and natural beauty of Lebanon’s iconic cedar trees, CedarStay aims to provide a seamless, user-friendly experience for both travelers and property owners. The platform will serve as a comprehensive solution for booking cabins, domes, condo, homes and cottages… featuring a range of functionalities that cater to the diverse needs of its users.
