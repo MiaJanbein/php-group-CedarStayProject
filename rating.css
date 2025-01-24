@@ -1,0 +1,154 @@
+@import url(//fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap);
+
+fieldset, label { margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; margin: 30px; background: #f7f8fa; }
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/****** Style Star Rating Widget *****/
+
+.comments-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 500px;
+  height: 400px;
+  background: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+  background: linear-gradient(110deg,  #004d40,  #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.comments-form h1 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333;
+}
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+  float:right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+
+/* Form Container Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Comment textarea */
+form textarea {
+  width: 60%;
+  height: 120px;
+  padding: 14px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  outline: none;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Textarea focus state */
+form textarea:focus {
+  border-color: #004d40;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+input[type="submit"] {
+  padding: 14px 24px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  background-color: #004d40;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color:  #004d44;
+  transform: scale(1.05);
+}
+
+input[type="submit"]:active {
+  transform: scale(1);
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  .comments-form {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+
+  form textarea {
+    font-size: 0.9em;
+  }
+
+  input[type="submit"]  {
+    font-size: 1em;
+    padding: 12px 20px;
+  }
+}
+.rating > label:hover {
+  animation: pulse 0.5s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

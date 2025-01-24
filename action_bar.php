@@ -1,0 +1,81 @@
+<?php
+
+
+if (isset($_SESSION['useremail'])) {
+    $username = $_SESSION['useremail'];
+    $button_text = "Logout";
+    $button_action = "loginPage.php?logout=true"; // Add query parameter for logout
+} else {
+    $button_text = "Login";
+    $button_action = "loginPage.php"; // Redirect to login page
+}
+?>
+
+<style>
+    .action-bar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #004d40;
+        color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .action-bar .back-button {
+        margin-right: 10px;
+    }
+
+    .action-bar .back-button a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: #00796b;
+        transition: background-color 0.3s;
+    }
+
+    .action-bar .back-button a:hover {
+        background-color: #005a4c;
+    }
+
+    .action-bar .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        flex-grow: 1; /* Ensures logo stays centered when other elements shift */
+        text-align: center;
+    }
+
+    .action-bar .login-container {
+        margin-left: 20px;
+    }
+
+    .action-bar .login-button {
+        background-color: #00796b;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .action-bar .login-button:hover {
+        background-color: #005a4c;
+    }
+</style>
+
+<div class="action-bar">
+    <div class="back-button">
+        <a href="homePage.php">&larr; Back</a>
+    </div>
+    <div class="logo">CedarStay</div>
+    <div class="login-container">
+        <a href="<?= $button_action ?>" class="login-button"><?= $button_text ?></a>
+    </div>
+</div>

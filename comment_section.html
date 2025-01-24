@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+	 <link rel="stylesheet" href="rating.css" />
+    <script src="comment_section.js" defer></script>
+  </head>
+  <body>
+  
+    <div class="comments-form">
+      <h1>Share Your Thoughts</h1>
+
+      <!-- Display message below the form -->
+     
+		<form action="commentsPHP.php?p=<?php echo $_GET['p']; ?>" method="POST">
+	   <?php if (!empty($message)): ?>
+        <p style="color: green; font-weight: bold;"><?php echo $message; ?></p>
+      <?php endif; ?>
+        <div>
+          <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Leave your comment here..." required></textarea>
+        </div>
+        <fieldset class="rating">
+		  Rate Us:
+		  <!-- Add required to the first radio input -->
+		  <input type="radio" id="star5" name="rating" value="5" required />
+		  <label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+		  <input type="radio" id="star4" name="rating" value="4"  />
+		  <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+		  <input type="radio" id="star3" name="rating" value="3" />
+		  <label class="full" for="star3" title="Meh - 3 stars"></label>
+
+		  <input type="radio" id="star2" name="rating" value="2" />
+		  <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+		  <input type="radio" id="star1" name="rating" value="1" />
+		  <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+		</fieldset>
+		
+
+        <div>
+          <input name="submitComment" type="submit" value="POST" />
+        </div>
+      </form>
+    </div>
+  </body>
+  
+</html>
