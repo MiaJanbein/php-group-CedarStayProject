@@ -1,0 +1,228 @@
+	
+		/* Container for the booking form and extra info */
+.booking-container {
+    display: flex;
+    justify-content: space-between;  /* Space between the form and extra info */
+    align-items: flex-start;
+    padding: 0 20px;
+    margin-top: 20px; /* Adjust if needed */
+}
+
+/* Extra Info Style */
+.extra-info {
+    flex: 1; /* Makes the extra info take the remaining space */
+    padding: 65px;
+    border-radius: 5px;
+    max-width: 300px; /* Set a maximum width to avoid too wide of a layout */
+    color: #555;
+    margin-right: 20px; /* Space between the extra info and booking form */
+}
+
+/* Booking Form Container */
+.section .section-center {
+    position: relative;
+    top: 35%;
+    left: 0;
+    right: 0;
+    transform: translateY(-35%);
+    display: flex;
+    justify-content: center; /* Center the form */
+    align-items: center;
+}
+
+/* Booking Form Style */
+.booking-form {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    padding: 40px;
+    background-image: url('cedarImage3.jpg');
+    background-size: cover;
+    border-radius: 5px;
+    z-index: 20;
+    margin: 0;
+}
+
+/* Optional: Add padding or margin to prevent elements from being too close together */
+.booking-form,
+.extra-info {
+    margin: 0 20px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .booking-container {
+        flex-direction: column;  /* Stack them vertically on smaller screens */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .extra-info {
+        margin-right: 0; /* Remove right margin on smaller screens */
+        margin-bottom: 5px; /* Add margin at the bottom for spacing */
+    }
+
+    .booking-form {
+        max-width: 100%;  /* Allow the booking form to take full width on smaller screens */
+    }
+}
+
+.section {
+    position: relative;
+    height: 100vh;
+}
+
+#booking {
+    font-family: 'Raleway', sans-serif;
+}
+
+.booking-form::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.booking-form .form-header {
+    text-align: center;
+    position: relative;
+    margin-bottom: 55px;
+}
+
+.booking-form .form-header h1 {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 42px;
+    margin: 0px;
+    color: #fff;
+}
+
+.booking-form .form-group {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.booking-form .form-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 30px;
+    padding: 0px 25px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    -webkit-box-shadow: 0px 0px 0px 2px transparent;
+    box-shadow: 0px 0px 0px 2px transparent;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+.booking-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form .form-control:focus {
+    -webkit-box-shadow: 0px 0px 0px 2px #ff8846;
+    box-shadow: 0px 0px 0px 2px #ff8846;
+}
+
+.booking-form .form-label {
+    position: absolute;
+    top: -25px; /* Adjusted to position above the input field */
+    left: 7px;
+    opacity: 5;
+    color: #fff; /* Set color to white */
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 10px;
+    line-height: 15px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.booking-form .form-group.input-not-empty .form-control {
+    padding-top: 16px;
+}
+
+.booking-form .form-group.input-not-empty .form-label {
+    opacity: 1;
+    top: 10px; /* Adjusted to make it stick closer to the input */
+}
+
+.booking-form .btn-guest {
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    background-color: #e35e0a;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.booking-form .btn-guest:hover {
+    opacity: 0.9;
+}
+
+.booking-form .submit-btn {
+    color: #fff;
+    background-color: #005a4c;
+    font-weight: 700;
+    height: 60px;
+    padding: 10px 30px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.3px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+    opacity: 0.9;
+}
+
+.form-label {
+    color: #ff8846;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+
+.booking-form p {
+    color: #ff8846;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Modern styling for date inputs */
+.booking-form input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    color: #333;
+}
+
+.booking-form input[type="date"]:focus {
+    border-color: #ff8846;
+}
